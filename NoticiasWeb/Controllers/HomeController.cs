@@ -7,7 +7,7 @@ namespace NoticiasWeb.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+         //hola mundo
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
