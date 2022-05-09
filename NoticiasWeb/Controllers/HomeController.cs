@@ -8,6 +8,7 @@ namespace NoticiasWeb.Controllers
     {
         private readonly ILogger<HomeController> _logger;
          //hola mundo
+         //hola rey bello
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
