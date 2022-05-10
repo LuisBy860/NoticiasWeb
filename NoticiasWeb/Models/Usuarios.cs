@@ -7,7 +7,7 @@ namespace NoticiasWeb.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int IdUsuario { get; set; }
+        public int UsuarioId { get; set; }
 
         public string Nombre { get; set; }
 
@@ -17,16 +17,16 @@ namespace NoticiasWeb.Models
 
         public string Email { get; set; }
 
-        public int IDPrivilegio { get; set; }
+        public int PrivilegioID { get; set; }
 
-        public int IDSuscripcion { get; set; }
+        public int SuscripcionID { get; set; }
 
         public Privilegios Privilegio { get; set; }
 
-        public Suscripciónes Suscripción { get; set; }
+        public Suscripciónes Suscripcion { get; set; }
 
-        public ICollection<Comentarios> Comentarios { get; set; }
+      
 
-        public ICollection<Noticias> Noticias { get; set; }
+        public ICollection<Noticias> Noticia { get; set; }
     }
 }

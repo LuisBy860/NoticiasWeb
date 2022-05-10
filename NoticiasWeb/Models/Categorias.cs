@@ -7,12 +7,12 @@ namespace NoticiasWeb.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int IdCategoria { get; set; }
+        public int CategoriaId { get; set; }
 
         public string Titulo { get; set; }
 
         public string Descripcion { get; set; }
 
-        public ICollection<Noticias> Noticias { get; set; }
+        public ICollection<Noticias> Noticia { get; set; }
     }
 }

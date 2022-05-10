@@ -7,7 +7,7 @@ namespace NoticiasWeb.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int IdNoticia { get; set; }
+        public int NoticiaId { get; set; }
 
         public string Titulo { get; set; }
 
@@ -17,17 +17,17 @@ namespace NoticiasWeb.Models
 
         public DateTime fecha { get; set; }
 
-        public int IDCategoria  { get; set; }
+        public int CategoriaID { get; set; }
 
-        public int IDUsuario { get; set; }
+        public int UsuarioID { get; set; }
 
         public  Categorias Categoria { get; set; }
 
         public Usuarios Usuario { get; set; }
-        
-        
-        public ICollection<Comentarios>  Comentarios  { get; set; }
-     
+
+
+        public ICollection<Comentarios> Comentario { get; set; }
+
 
     }
 }

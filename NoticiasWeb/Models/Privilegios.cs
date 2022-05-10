@@ -7,10 +7,10 @@ namespace NoticiasWeb.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int IdPrivilegio { get; set; }
+        public int PrivilegioId { get; set; }
 
         public string TipoUsuario { get; set; }
 
-        public ICollection<Usuarios> Usuarios { get; set; }
+        public ICollection<Usuarios> Usuario { get; set; }
     }
 }

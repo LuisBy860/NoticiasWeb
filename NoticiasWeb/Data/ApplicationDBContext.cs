@@ -17,7 +17,6 @@ namespace NoticiasWeb.Data
         public DbSet<Categorias> Categorias { get; set; }
         public DbSet<Comentarios> Comentarios { get; set; }
         public DbSet<Noticias> Noticias { get; set; }
-
         public DbSet<Privilegios> Privilegios { get; set; }
         public DbSet<Suscripciónes> Suscripciónes { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }

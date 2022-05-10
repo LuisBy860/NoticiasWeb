@@ -8,22 +8,19 @@ namespace NoticiasWeb.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int IdComentario { get; set; }
+        public int ComentarioId { get; set; }
 
         public string Comentario { get; set; }
 
         public DateTime Fecha { get; set; }
 
+        public int NoticiaID { get; set; }
 
-        public int IDNoticia { get; set; }
-
-        public int IDUsuario { get; set; }
-
+      
 
         //tablas con las que tiene relacion 
-
          public Noticias Noticia { get; set; }
 
-        public Usuarios Usuario { get; set; }
+    
     }
 }
