@@ -1,8 +1,20 @@
+using NoticiasWeb;
+using Microsoft.EntityFrameworkCore;
+using NoticiasWeb.Data;
+using NoticiasWeb.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+options.UseSqlServer("Server=.;Database=NoticiasWeb; TrustServerCertificate=true; Trusted_Connection=true; Connection Timeout= 30; Integrated Security=true; Persist Security Info= false; Encrypt= true; MultipleActiveResultSets=true;")
+);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
