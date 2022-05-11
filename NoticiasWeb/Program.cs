@@ -1,7 +1,9 @@
-using NoticiasWeb;
+
 using Microsoft.EntityFrameworkCore;
 using NoticiasWeb.Data;
+using NoticiasWeb.Repository;
 using NoticiasWeb.Models;
+using NoticiasWeb.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 options.UseSqlServer("Server=LUISBY860\\SQLEXPRESS;Database=NoticiasWeb; TrustServerCertificate=true; Trusted_Connection=true; Connection Timeout= 30; Integrated Security=true; Persist Security Info= false; Encrypt= true; MultipleActiveResultSets=true;")
 
 );
+
+builder.Services.AddTransient<ICategoria,Categoria>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +40,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Categoria}/{action=Index}/{id?}");
 
 app.Run();

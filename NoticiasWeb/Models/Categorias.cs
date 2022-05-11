@@ -13,6 +13,6 @@ namespace NoticiasWeb.Models
 
         public string Descripcion { get; set; }
 
-        public ICollection<Noticias> Noticia { get; set; }
+        //public ICollection<Noticias> Noticia { get; set; }
     }
 }
