@@ -15,7 +15,7 @@ namespace NoticiasWeb.Repository
 
 
 
-        public void AddCategorias(Models.Categorias ca)
+        public void AddCategorias(Categorias ca)
         {
 
             app.Categorias.Add(ca);
@@ -24,7 +24,7 @@ namespace NoticiasWeb.Repository
             
         }
 
-        public void DeleteCategorias(Models.Categorias ca)
+        public void DeleteCategorias(Categorias ca)
         {
             app.Categorias.Remove(ca);
             app.SaveChanges();
@@ -35,7 +35,7 @@ namespace NoticiasWeb.Repository
             return app.Categorias.ToList();
         }
 
-        public Models.Categorias LoadInformation(Models.Categorias ca)
+        public Models.Categorias LoadInformation(Categorias ca)
         {
             var listarcategoria = app.Categorias.Where(x => x.CategoriaId == ca.CategoriaId).FirstOrDefault();
             return listarcategoria;

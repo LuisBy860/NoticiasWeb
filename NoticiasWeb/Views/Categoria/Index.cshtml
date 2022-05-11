@@ -1,15 +1,20 @@
 ﻿@model List<NoticiasWeb.Models.Categorias>
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
 
 
+<div>  
 
-@Html.ActionLink("Agregar","Agregar",new{@class="btn btn-primary"})
+<a class="btn btn-success" href="/Categoria/Agregar">agregar</a> 
+
+ </div>
+
+ &nbsp;
 
 <table class="table table-striped" id="tablaEst">
+
+   
+   
+   
+    
     <thead>
         <tr>
             <th>Titulo</th>
@@ -33,7 +38,7 @@
 
     </tbody>
 
-
+      &nbsp;
 </table>
 @section scripts{
 

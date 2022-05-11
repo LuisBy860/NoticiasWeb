@@ -19,6 +19,7 @@ options.UseSqlServer("Server=LUISBY860\\SQLEXPRESS;Database=NoticiasWeb; TrustSe
 );
 
 builder.Services.AddTransient<ICategoria,Categoria>();
+builder.Services.AddTransient<ISuscripcion, Suscripciones>();
 
 
 var app = builder.Build();
