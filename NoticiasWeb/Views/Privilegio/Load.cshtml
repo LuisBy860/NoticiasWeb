@@ -1,0 +1,14 @@
+﻿@model NoticiasWeb.Models.Privilegios
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-controller="Privilegio" asp-action="actu"> 
+    <label>Id</label>
+    <input type="text" asp-for="PrivilegioId" readonly />
+    <label>Titulo</label>
+    <input type="text" asp-for="TipoUsuario" />
+    <button>Update</button>
+</form>

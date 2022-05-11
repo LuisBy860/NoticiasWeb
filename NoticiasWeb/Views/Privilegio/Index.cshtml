@@ -1,10 +1,8 @@
-﻿@model List<NoticiasWeb.Models.Categorias>
+﻿@model List<NoticiasWeb.Models.Privilegios>
 
+<div>    
 
-<div>  
-    <a class="btn btn-success" href="/Suscripcion/index">Suscripcion</a> 
-    <a class="btn btn-success" href="/Privilegio/index">Privilegio</a> 
-<a class="btn btn-success" href="/Categoria/Agregar">agregar</a> 
+<a class="btn btn-success" href="/Privilegio/Agregar">agregar</a> 
 
  </div>
 
@@ -12,14 +10,10 @@
 
 <table class="table table-striped" id="tablaEst">
 
-   
-   
-   
     
     <thead>
         <tr>
             <th>Titulo</th>
-             <th>Descripcion</th>
              <th>Acciones</th>
             
         </tr>
@@ -29,11 +23,10 @@
         @foreach (var iterar in Model)
         {
             <tr>
-                <td>@iterar.Titulo  </td>
-                <td>@iterar.Descripcion  </td>
+                <td>@iterar.TipoUsuario  </td>
                 @*El primer delete es para texto el segundo delte es la accion del controlador*@
-                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.CategoriaId},new{@class="btn btn-danger"}) 
-                @Html.ActionLink("Update","Load",new{id=@iterar.CategoriaId},new{@class="btn btn-warning"} ) </td>
+                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.PrivilegioId},new{@class="btn btn-danger"}) 
+                @Html.ActionLink("Update","Load",new{id=@iterar.PrivilegioId},new{@class="btn btn-warning"} ) </td>
             </tr>
         }
 
@@ -54,5 +47,6 @@
     </script>
 
 }
+
 
 
