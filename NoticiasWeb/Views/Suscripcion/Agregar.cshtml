@@ -1,0 +1,16 @@
+﻿@model NoticiasWeb.Models.Suscripciónes
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="Suscripcion" asp-action="Guarda"> 
+
+    <label>Costo</label>
+    <input type="number" asp-for="Costo" />
+    <label>Caracteristica</label>
+    <input type="text" asp-for="Caracteristica" />
+    <button>Guardar</button>
+</form>
