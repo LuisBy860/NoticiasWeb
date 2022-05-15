@@ -1,5 +1,25 @@
 ﻿@model List<NoticiasWeb.Models.Privilegios>
 
+    @*esto es boostrap*@
+  
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mostrar Dashboard</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Opciones y Registros</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  <p> <a  href="/Suscripcion/index">Suscripcion</a> </p>
+   <p> <a  href="/Privilegio/index">Privilegio</a> </p>
+    <p> <a  href="/Categoria/index">Categoria</a> </p>
+  </div>
+</div>
+
+
+
+
 <div>    
 
 <a class="btn btn-success" href="/Privilegio/Agregar">agregar</a> 
@@ -7,6 +27,7 @@
  </div>
 
  &nbsp;
+
 
 <table class="table table-striped" id="tablaEst">
 

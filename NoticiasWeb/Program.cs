@@ -14,13 +14,13 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
-options.UseSqlServer("Server=.;Database=NoticiasWeb; TrustServerCertificate=true; Trusted_Connection=true; Connection Timeout= 30; Integrated Security=true; Persist Security Info= false; Encrypt= true; MultipleActiveResultSets=true;")
+options.UseSqlServer("Server=LUISBY860\\SQLEXPRESS;Database=NoticiasWeb; TrustServerCertificate=true; Trusted_Connection=true; Connection Timeout= 30; Integrated Security=true; Persist Security Info= false; Encrypt= true; MultipleActiveResultSets=true;")
 
 );
 
 builder.Services.AddTransient<ICategoria,Categoria>();
 builder.Services.AddTransient<ISuscripcion, Suscripciones>();
-
+builder.Services.AddTransient<IPrivilegio, Privilegio>();
 
 var app = builder.Build();
 
