@@ -1,0 +1,26 @@
+﻿@model NoticiasWeb.Models.Noticias
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="Noticia" asp-action="Guarda"> 
+     
+    <label>Titulo</label>
+    <input type="text"  asp-for="Titulo" /></>
+      <label>Descripcion</label>
+    <input type="text"  asp-for="Descripcion" /></>
+      <label>Imagen</label>
+    <input type="text"  asp-for="Imagen" /></>
+      <label>Fecha</label>
+    <input type="datetime"  asp-for="fecha" /></>
+    <label>CategoriaID</label>
+    <input type="text" asp-for="CategoriaID" />
+      <label>UsuarioID</label>
+    <input type="text"  asp-for="UsuarioID" /></>
+    <button>Guardar</button>
+
+    <td> @Html.ActionLink("Regresar","Index","Noticia",new{@class="btn btn-warning"} ) </td>
+</form>

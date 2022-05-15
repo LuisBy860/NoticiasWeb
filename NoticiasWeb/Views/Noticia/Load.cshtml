@@ -1,0 +1,21 @@
+﻿@model NoticiasWeb.Models.Noticias
+
+
+
+<form asp-controller="Noticia" asp-action="actu"> 
+     <label>NoticiaId</label>
+    <input type="text"  asp-for="NoticiaId" readonly/></>
+    <label>Titulo</label>
+    <input type="text"  asp-for="Titulo" /></>
+      <label>Descripcion</label>
+    <input type="text"  asp-for="Descripcion" /></>
+      <label>Imagen</label>
+    <input type="text"  asp-for="Imagen" /></>
+      <label>fecha</label>
+    <input type="datetime"  asp-for="fecha" /></>
+    <label>CategoriaID</label>
+    <input type="text" asp-for="CategoriaID" />
+      <label>UsuarioID</label>
+    <input type="text"  asp-for="UsuarioID" /></>
+    <button>Update</button>
+</form>

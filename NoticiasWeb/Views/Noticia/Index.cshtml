@@ -1,4 +1,4 @@
-﻿@model List<NoticiasWeb.Models.Suscripciónes>
+﻿@model List<NoticiasWeb.Models.Noticias>
 
 
 
@@ -12,10 +12,10 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-  <p> <a  href="/Suscripcion/index">Suscripcion</a> </p>
+   <p> <a  href="/Suscripcion/index">Suscripcion</a> </p>
    <p> <a  href="/Privilegio/index">Privilegio</a> </p>
-     <p> <a  href="/Categoria/index">Categoria</a> </p>
-       <p> <a  href="/Noticia/index">Noticia</a> </p>
+   <p> <a  href="/Categoria/index">Categoria</a> </p>
+
   </div>
 </div>
 
@@ -25,7 +25,7 @@
 
 
 
-<a class="btn btn-success" href="/Suscripcion/Agregar">Agregar</a> 
+<a class="btn btn-success" href="/Noticia/Agregar">Agregar</a> 
 
  </div>
 
@@ -39,9 +39,13 @@
     
     <thead>
         <tr>
-            <th>Id Suscripcion</th>
-             <th>Costo</th>
-             <th>Caracteristica</th>
+            <th>Id Noticia</th>
+             <th>Titulo</th>
+             <th>Descripcion</th>
+             <th>Imagen</th>
+             <th>Fecha</th>
+             <th>CategoriaID</th>
+             <th>UsuarioID</th>
             
         </tr>
 
@@ -50,12 +54,16 @@
         @foreach (var iterar in Model)
         {
             <tr>
-                <td>@iterar.SuscripcionId  </td>
-             <td min="1.00" max="10000.00" step="0.01"> <label>$@iterar.Costo  </label> </td>
-                <td>@iterar.Caracteristica  </td>
+                <td>@iterar.NoticiaId </td>
+             <td> @iterar.Titulo</td>
+                <td>@iterar.Descripcion  </td>
+                 <td>@iterar.Imagen  </td>
+                  <td>@iterar.fecha </td>
+                   <td>@iterar.CategoriaID </td>
+                    <td>@iterar.UsuarioID  </td>
                 @*El primer delete es para texto el segundo delte es la accion del controlador*@
-                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.SuscripcionId},new{@class="btn btn-danger"}) 
-                @Html.ActionLink("Update","Load",new{id=@iterar.SuscripcionId},new{@class="btn btn-warning"} ) </td>
+                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.NoticiaId},new{@class="btn btn-danger"}) 
+                @Html.ActionLink("Update","Load",new{id=@iterar.NoticiaId},new{@class="btn btn-warning"} ) </td>
             </tr>
         }
 
@@ -76,5 +84,4 @@
     </script>
 
 }
-
 

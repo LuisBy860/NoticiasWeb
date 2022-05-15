@@ -22,6 +22,7 @@ builder.Services.AddTransient<ICategoria,Categoria>();
 builder.Services.AddTransient<ISuscripcion, Suscripciones>();
 builder.Services.AddTransient<IPrivilegio, Privilegio>();
 builder.Services.AddTransient<IUsuario, Usuario>();
+builder.Services.AddTransient<INoticia, Noticia>();
 
 var app = builder.Build();
 
