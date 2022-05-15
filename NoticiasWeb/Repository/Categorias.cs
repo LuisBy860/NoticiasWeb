@@ -11,7 +11,7 @@ namespace NoticiasWeb.Repository
         public Categoria(ApplicationDBContext app)
         {
             this.app = app;
-        }
+        } 
 
 
 
