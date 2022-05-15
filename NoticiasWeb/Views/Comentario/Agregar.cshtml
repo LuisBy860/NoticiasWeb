@@ -1,0 +1,19 @@
+﻿@model NoticiasWeb.Models.Comentarios
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="Comentario" asp-action="Guarda"> 
+     
+    <label>Comentario</label>
+    <input type="text"  asp-for="Comentario" /></>
+      <label>fecha</label>
+    <input type="datetime-local"  asp-for="Fecha" /></>
+      <label>NoticiaID</label>
+    <input type="int"  asp-for="NoticiaID" /></>
+     <button>Guardar</button>
+    <td> @Html.ActionLink("Regresar","Index","Comentario",new{@class="btn btn-warning"} ) </td>
+</form>

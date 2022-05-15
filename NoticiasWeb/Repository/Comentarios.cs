@@ -4,11 +4,11 @@ using NoticiasWeb.Service;
 
 namespace NoticiasWeb.Repository
 {
-    public class Comentarios : IComentario
+    public class Comentario : IComentario
     {
         private ApplicationDBContext app;
 
-        public Comentarios(ApplicationDBContext app)
+        public Comentario(ApplicationDBContext app)
         {
             this.app = app;
         }

@@ -1,0 +1,14 @@
+﻿@model NoticiasWeb.Models.Comentarios
+
+
+
+<form asp-controller="Comentario" asp-action="actu"> 
+    <label>ComentarioId</label>
+    <input type="text"  asp-for="ComentarioId" readonly/></>
+     label>Comentario</label>
+    <input type="text"  asp-for="Comentario" /></>
+      <label>fecha</label>
+    <input type="datetime-local"  asp-for="Fecha" /></>
+      <label>Imagen</label>
+    <input type="int"  asp-for="NoticiaID" /></>
+</form>
