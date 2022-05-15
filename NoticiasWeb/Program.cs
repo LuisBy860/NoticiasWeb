@@ -23,7 +23,7 @@ builder.Services.AddTransient<ISuscripcion, Suscripciones>();
 builder.Services.AddTransient<IPrivilegio, Privilegio>();
 builder.Services.AddTransient<IUsuario, Usuario>();
 builder.Services.AddTransient<INoticia, Noticia>();
-
+builder.Services.AddTransient<IComentario, NoticiasWeb.Repository.Comentarios>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
