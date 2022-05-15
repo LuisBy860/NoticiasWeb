@@ -36,7 +36,7 @@ namespace NoticiasWeb.Controllers
             public IActionResult Delete(int id)
             {
                 Usuarios us = new Usuarios();
-                us.SuscripcionID = id;
+                us.UsuarioId = id;
                 Usuario.DeleteUsuarios( us);
 
                 return RedirectToAction("Index");

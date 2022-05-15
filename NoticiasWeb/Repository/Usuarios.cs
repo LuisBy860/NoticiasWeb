@@ -15,27 +15,36 @@ namespace NoticiasWeb.Repository
 
         public void AddUsuarios(Usuarios us)
         {
-            throw new NotImplementedException();
+            app.Usuarios.Add(us);
+            app.SaveChanges();
+            
         }
 
         public void DeleteUsuarios(Usuarios us)
         {
-            throw new NotImplementedException();
+            app.Usuarios.Remove(us);
+            app.SaveChanges();
+            
         }
 
         public List<Models.Usuarios> Getall()
         {
-            throw new NotImplementedException();
+            return app.Usuarios.ToList();
+           
         }
 
         public Models.Usuarios LoadInformation(Usuarios us)
         {
-            throw new NotImplementedException();
+            var listarusuarios = app.Usuarios.Where(x => x.UsuarioId == us.UsuarioId).FirstOrDefault();
+            return listarusuarios;
+            
         }
 
         public void UpdateUsuarios(Usuarios us)
         {
-            throw new NotImplementedException();
+            app.Usuarios.Update(us);
+            app.SaveChanges();
+            
         }
     }
 }

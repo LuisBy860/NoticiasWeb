@@ -1,9 +1,8 @@
-﻿@model List<NoticiasWeb.Models.Categorias>
+﻿@model List<NoticiasWeb.Models.Usuarios>
 
 
 
-
-@*esto es boostrap*@
+    @*esto es boostrap*@
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mostrar Dashboard</button>
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -15,12 +14,9 @@
   <div class="offcanvas-body">
   <p> <a  href="/Suscripcion/index">Suscripcion</a> </p>
    <p> <a  href="/Privilegio/index">Privilegio</a> </p>
-    <p> <a  href="/Categoria/index">Categoria</a> </p>
-    <p> <a  href="/Usuario/index">Usuario</a> </p>
+     <p> <a  href="/Categoria/index">Categoria</a> </p>
   </div>
 </div>
-
-
 
 
 
@@ -28,9 +24,7 @@
 
 
 
-    <a class="btn btn-success" href="/Suscripcion/index">Suscripcion</a> 
-    <a class="btn btn-success" href="/Privilegio/index">Privilegio</a> 
-    <a class="btn btn-success" href="/Categoria/Agregar">agregar</a> 
+<a class="btn btn-success" href="/Usuario/Agregar">Agregar</a> 
 
  </div>
 
@@ -44,9 +38,13 @@
     
     <thead>
         <tr>
-            <th>Titulo</th>
-             <th>Descripcion</th>
-             <th>Acciones</th>
+            <th>Id Usuario</th>
+             <th>Nombre</th>
+             <th>Alias</th>
+             <th>Contrasena</th>
+             <th>Email</th>
+             <th>PrivilegioID</th>
+             <th>SuscripcionID</th>
             
         </tr>
 
@@ -55,15 +53,20 @@
         @foreach (var iterar in Model)
         {
             <tr>
-                <td>@iterar.Titulo  </td>
-                <td>@iterar.Descripcion  </td>
+                <td>@iterar.UsuarioId  </td>
+             <td> @iterar.Nombre</td>
+                <td>@iterar.Alias  </td>
+                 <td>@iterar.Contrasena  </td>
+                  <td>@iterar.Email </td>
+                   <td>@iterar.PrivilegioID  </td>
+                    <td>@iterar.SuscripcionID  </td>
                 @*El primer delete es para texto el segundo delte es la accion del controlador*@
-                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.CategoriaId},new{@class="btn btn-danger"}) 
-                @Html.ActionLink("Update","Load",new{id=@iterar.CategoriaId},new{@class="btn btn-warning"} ) </td>
+                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.UsuarioId},new{@class="btn btn-danger"}) 
+                @Html.ActionLink("Update","Load",new{id=@iterar.UsuarioId},new{@class="btn btn-warning"} ) </td>
             </tr>
         }
 
-    </tbody>
+       </tbody>
 
       &nbsp;
 </table>

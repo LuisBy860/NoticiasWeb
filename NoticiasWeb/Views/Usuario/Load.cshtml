@@ -1,0 +1,23 @@
+﻿@model NoticiasWeb.Models.Usuarios
+
+
+
+<form asp-controller="Usuario" asp-action="actu"> 
+    <label>Id</label>
+    <input type="text" asp-for="UsuarioId" readonly />
+    <label>Costo</label>
+      <label>Caracteristica</label>
+    <input type="text" asp-for="Nombre" />
+      <label>Nombre</label>
+    <input type="text" asp-for="Alias" />
+      <label>Alias</label>
+    <input type="text" asp-for="Contrasena" />
+     <label>Contraseña</label>
+    <input type="text" asp-for="Email" />
+    <label>Email</label>
+    <input type="text" asp-for="PrivilegioID"readonly />
+     <label>PrivilegioID</label>
+     <input type="text" asp-for="SuscripcionID" readonly/>
+     <label>SuscripcionID</label>
+    <button>Update</button>
+</form>
