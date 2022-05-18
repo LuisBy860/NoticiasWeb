@@ -1,6 +1,7 @@
 ﻿using NoticiasWeb.Service;
 using NoticiasWeb.Models;
 using NoticiasWeb.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace NoticiasWeb.Repository
 {
@@ -46,5 +47,8 @@ namespace NoticiasWeb.Repository
             app.SaveChanges();
 
         }
+       
+
+       
     }
 }

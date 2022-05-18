@@ -10,6 +10,7 @@ namespace NoticiasWeb.Service
         public List<Noticias> Getall();
 
         public Noticias LoadInformation(Noticias nt);
+      
     }
 }
 

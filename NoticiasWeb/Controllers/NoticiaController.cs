@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NoticiasWeb.Data;
 using NoticiasWeb.Models;
 using NoticiasWeb.Service;
 
@@ -6,6 +7,8 @@ namespace NoticiasWeb.Controllers
 {
     public class NoticiaController : Controller
     {
+
+
 
         private INoticia Noticia;
 
@@ -64,5 +67,6 @@ namespace NoticiasWeb.Controllers
             // return View("Index");
 
         }
+
     }
 }

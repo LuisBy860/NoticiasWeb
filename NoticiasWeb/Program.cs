@@ -24,6 +24,7 @@ builder.Services.AddTransient<IPrivilegio, Privilegio>();
 builder.Services.AddTransient<IUsuario, Usuario>();
 builder.Services.AddTransient<INoticia, Noticia>();
 builder.Services.AddTransient<IComentario, Comentario>();
+builder.Services.AddTransient<IMostrarNoticia, MostrarNoticias>();
 
 
 

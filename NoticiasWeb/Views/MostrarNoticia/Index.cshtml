@@ -1,0 +1,42 @@
+﻿@model IEnumerable<NoticiasWeb.Models.Noticias>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+
+        <thead>
+            <tr>
+                  <th>TITULO</th>
+                <th>DESCRIPCION</th>
+                <th>iMAGEN </th> 
+             
+                 <th>usuario </th>
+                <th>FECHA</th>
+           
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+
+        @foreach(var iteracion in Model)
+        {
+            <tr>
+                <td>@iteracion.Titulo</td>
+                <td>@iteracion.Descripcion</td>
+                <td>@iteracion.Imagen</td>
+                <td>@iteracion.Usuario.Alias</td>
+                <td>@iteracion.fecha</td>
+            </tr>
+        }
+        </tbody>
+    

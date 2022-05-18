@@ -3,8 +3,11 @@
 
 
 
-@*esto es boostrap*@
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mostrar Dashboard</button>
+
+
+
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mostrar Dashboard</button>
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
@@ -19,32 +22,21 @@
     <p> <a  href="/Usuario/index">Usuario</a> </p>
      <p> <a  href="/Noticia/index">Noticia</a> </p>
       <p> <a  href="/Comentario/index">Comentario</a> </p>
+        <p> <a  href="/MostrarNoticia/index">MostrarNoticia</a> </p>
   </div>
 </div>
 
+    <div class="card border-dark mb-3">
+  <div class="card-header" >
+    Listar Categorias
+  </div>
+  <div class="card-body">
 
-
-
-
-<div>  
-
-
-
-    <a class="btn btn-success" href="/Suscripcion/index">Suscripcion</a> 
-    <a class="btn btn-success" href="/Privilegio/index">Privilegio</a> 
-    <a class="btn btn-success" href="/Categoria/Agregar">agregar</a> 
-
- </div>
-
- &nbsp;
-
-<table class="table table-striped" id="tablaEst">
-
-   
-   
-   
-    
-    <thead>
+    <a class="btn btn-success" href="/Categoria/Agregar">agregar Nueva Categoria</a>
+     
+    <hr />
+    <table class="table table-bordered"  id="tablaEst" >
+      <thead>
         <tr>
             <th>Titulo</th>
              <th>Descripcion</th>
@@ -53,7 +45,7 @@
         </tr>
 
     </thead>
-    <tbody>
+        <tbody>
         @foreach (var iterar in Model)
         {
             <tr>
@@ -66,9 +58,13 @@
         }
 
     </tbody>
+    </table>
 
-      &nbsp;
-</table>
+  </div>
+</div>
+
+<div>
+
 @section scripts{
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -81,6 +77,8 @@
 
     </script>
 
+
+
 }
 
-
+</div>
