@@ -35,7 +35,7 @@
   </div>
   <div class="card-body">
 
-    <a class="btn btn-success" href="/Categoria/Agregar">agregar Nueva Categoria</a>
+    <a class="btn btn-success" href="/Categoria/Agregar"><i class="bi bi-plus-circle"><b> </b></i>Agregar Categoria</a>
      
     <hr />
     <table class="table table-bordered"  id="tablaEst" >
@@ -55,8 +55,10 @@
                 <td>@iterar.Titulo  </td>
                 <td>@iterar.Descripcion  </td>
                 @*El primer delete es para texto el segundo delte es la accion del controlador*@
-                <td>@Html.ActionLink("Delete ","Delete",new{id=@iterar.CategoriaId},new{@class="btn btn-danger" }) 
-                @Html.ActionLink("Update","Load",new{id=@iterar.CategoriaId},new{@class="btn btn-warning"} ) </td>
+                <td>
+                @Html.ActionLink("Delete","Delete",new{id=@iterar.CategoriaId},new{@class="bi bi-x-circle + btn btn-danger"}) 
+                @Html.ActionLink("Update","Load",new{id=@iterar.CategoriaId},new{@class="bi bi-arrow-clockwise + btn btn-warning"} )
+                </td>
             </tr>
         }
 
