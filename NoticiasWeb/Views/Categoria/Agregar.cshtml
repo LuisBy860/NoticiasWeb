@@ -6,13 +6,30 @@
 @{
 }
 
-<form asp-controller="Categoria" asp-action="Guarda"> 
 
-    <label>Titulo</label>
+
+<div class="card">
+  <div class="card-header">
+    Crear Categoria
+  </div>
+  <div class="card-body">
+
+
+      <form asp-action="Guarda" asp-controller="Categoria" >
+      <div class="mb-3">
+       <label>Titulo</label>
     <input type="text" asp-for="Titulo" />
-    <label>Descripcion</label>
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+      </div>
+      <div class="mb-3">
+         <label>Descripcion</label>
     <input type="text" asp-for="Descripcion" />
-    <button>Guardar</button>
-
+       
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
      <td> @Html.ActionLink("Regresar","Index","Categoria",new{@class="btn btn-warning"} ) </td>
-</form>
+    </form>
+
+
+  </div>
+</div>
