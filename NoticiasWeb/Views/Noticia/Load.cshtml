@@ -1,21 +1,42 @@
 ﻿@model NoticiasWeb.Models.Noticias
 
+<div class="card">
+<div class="card-header">
+    Actualizar Noticia
+</div>
+<div class="card-body">
 
 
-<form asp-controller="Noticia" asp-action="actu"> 
-     <label>NoticiaId</label>
-    <input type="text"  asp-for="NoticiaId" readonly/></>
-    <label>Titulo</label>
-    <input type="text"  asp-for="Titulo" /></>
-      <label>Descripcion</label>
-    <input type="text"  asp-for="Descripcion" /></>
-      <label>Imagen</label>
-    <input type="text"  asp-for="Imagen" /></>
-      <label>fecha</label>
-    <input type="datetime"  asp-for="fecha" /></>
-    <label>CategoriaID</label>
-    <input type="text" asp-for="CategoriaID" />
-      <label>UsuarioID</label>
-    <input type="text"  asp-for="UsuarioID" /></>
-    <button>Update</button>
+<form asp-action="actu" asp-controller="Noticia" >
+       <div class="mb-3">      
+            <input type="hidden" asp-for="NoticiaId" readonly />
+       </div>
+       <div class="mb-5">
+            <label>Titulo</label>
+            <input type="text"  asp-for="Titulo" /></>
+       </div>
+       <div class="mb-5">
+            <label>Descripcion</label>
+            <input type="text"  asp-for="Descripcion" /></>
+       </div>
+       <div class="mb-5">
+            <label>Imagen</label>
+            <input type="text"  asp-for="Imagen" /></>
+       </div>
+       <div class="mb-5">
+            <label>fecha</label>
+            <input type="datetime"  asp-for="fecha" /></>
+       </div>
+       <div class="mb-5">
+            <label>CategoriaID</label>
+            <input type="text" asp-for="CategoriaID" />
+       </div>
+       <div class="mb-5">
+            <label>UsuarioID</label>
+            <input type="text"  asp-for="UsuarioID" /></>
+       </div>
+      <button  class="btn btn-primary">Actualizar</button>
+     <td> @Html.ActionLink("Regresar","Index","Noticia",new{@class="btn btn-warning"} ) </td>
 </form>
+</div>
+</div>

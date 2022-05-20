@@ -6,14 +6,28 @@
 @{
 }
 
-<form asp-controller="Comentario" asp-action="Guarda" > 
-     
-    <label>Comentario</label>
-    <input type="text"  asp-for="Comentario" /></>
-      <label>fecha</label>
-    <input type="datetime-local"  asp-for="Fecha" /></>
-      <label>NoticiaID</label>
-    <input type="int"  asp-for="NoticiaID" /></>
-     <button>Guardar</button>
-    <td> @Html.ActionLink("Regresar","Index","Comentario",new{@class="btn btn-warning"} ) </td>
+<div class="card">
+<div class="card-header">
+    Crear Comentario
+</div>
+<div class="card-body">
+
+
+<form asp-action="Guarda" asp-controller="Comentario" >
+      <div class="mb-5">
+            <label>Comentario</label>
+            <input type="text"  asp-for="Comentario" /></>
+      </div>
+      <div class="mb-5">
+            <label>fecha</label>
+            <input type="datetime-local"  asp-for="Fecha" /></>
+      </div>
+      <div class="mb-5">
+            <label>NoticiaID</label>
+            <input type="int"  asp-for="NoticiaID" /></>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+<td> @Html.ActionLink("Regresar","Index","Comentario",new{@class="btn btn-warning"} ) </td>
 </form>
+</div>
+</div>

@@ -1,79 +1,75 @@
 ﻿@model List<NoticiasWeb.Models.Comentarios>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
 
-    @*esto es boostrap*@
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mostrar Dashboard</button>
+<div>
+    <button class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" > <i class="bi bi-arrow-right-square-fill"> Opciones</i>  </button>
+</div>
+    &nbsp;
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
 
     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Opciones y Registros</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
 
-  <p> <a  href="/Suscripcion/index">Suscripcion</a> </p>
-   <p> <a  href="/Privilegio/index">Privilegio</a> </p>
-   <p> <a  href="/Categoria/index">Categoria</a> </p>
-    <p> <a  href="/Usuario/index">Usuario</a> </p>
-     <p> <a  href="/Noticia/index">Noticia</a> </p>
-      <p> <a  href="/Comentario/index">Comentario</a> </p>
-        <p> <a  href="/MostrarNoticia/index">MostrarNoticia</a> </p>
+  </div>
+<div class="offcanvas-body">
+  <p> <a  href="/Suscripcion/index">Suscripcion         </a> </p>
+  <p> <a  href="/Privilegio/index">Privilegio           </a> </p>
+  <p> <a  href="/Categoria/index">Categoria             </a> </p>
+  <p> <a  href="/Usuario/index">Usuario                 </a> </p>
+  <p> <a  href="/Noticia/index">Noticia                 </a> </p>
+  <p> <a  href="/Comentario/index">Comentario           </a> </p>
+  <p> <a  href="/MostrarNoticia/index">MostrarNoticia   </a> </p>
+</div>
+</div>
+
+
+<div class="card border-dark mb-3">
+<div class="card-header" >
+    Listar Comentarios
+</div>
+<div class="card-body">
+
+<a class="btn btn-success" href="/Comentario/Agregar"><i class="bi bi-plus-circle"><b> </b></i>Agregar Comentario</a>
+     
+    <hr />
+    <table class="table table-bordered"  id="tablaEst" >
+      <thead>
+        <tr>
+             <th>Id Comentario  </th>
+             <th>Comentario     </th>
+             <th>Fecha          </th>
+             <th>NoticiaID      </th>            
+        </tr>
+
+    </thead>
+        <tbody>
+        @foreach (var iterar in Model)
+        {
+            <tr>
+                <td>@iterar.ComentarioId</td>
+                <td> @iterar.Comentario </td>
+                <td>@iterar.Fecha       </td>
+                <td>@iterar.NoticiaID   </td>
+                @*El primer delete es para texto el segundo delte es la accion del controlador*@
+                <td>
+                @Html.ActionLink("Delete","Delete",new{id=@iterar.ComentarioId},new{@class="bi bi-x-circle + btn btn-danger"}) 
+                @Html.ActionLink("Update","Load",new{id=@iterar.ComentarioId},new{@class="bi bi-arrow-clockwise + btn btn-warning"} )
+                </td>
+            </tr>
+        }
+
+    </tbody>
+    </table>
 
   </div>
 </div>
 
+<div>
 
-
-<div>  
-
-
-
-<a class="btn btn-success" href="/Comentario/Agregar">Agregar</a> 
-
- </div>
-
- &nbsp;
-
-<table class="table table-striped" id="tablaEst">
-
-   
-   
-   
-    
-    <thead>
-        <tr>
-            <th>Id Comentario</th>
-             <th>Comentario</th>
-             <th>Fecha</th>
-             <th>NoticiaID</th>
-        
-           
-            
-        </tr>
-
-    </thead>
-    <tbody>
-        @foreach (var iterar in Model)
-        {
-            <tr>
-                <td>@iterar.ComentarioId </td>
-             <td> @iterar.Comentario</td>
-                <td>@iterar.Fecha  </td>
-                 <td>@iterar.NoticiaID  </td>
-            
-              
-                @*El primer delete es para texto el segundo delte es la accion del controlador*@
-                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.ComentarioId},new{@class="btn btn-danger"}) 
-                @Html.ActionLink("Update","Load",new{id=@iterar.ComentarioId},new{@class="btn btn-warning"} ) </td>
-            </tr>
-        }
-
-       </tbody>
-
-      &nbsp;
-</table>
 @section scripts{
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -86,4 +82,8 @@
 
     </script>
 
+
+
 }
+
+</div>

@@ -6,14 +6,27 @@
 @{
 }
 
-<form asp-controller="Suscripcion" asp-action="Guarda"> 
+<div class="card">
+<div class="card-header">
+    Crear Suscripción
+</div>
+<div class="card-body">
 
-    <label>Costo</label>
-    <label> $
-    <input type="number" min="1.00" max="10000.00" step="0.01"  asp-for="Costo" /></label>
-    <label>Caracteristica</label>
-    <input type="text" asp-for="Caracteristica" />
-    <button>Guardar</button>
 
-    <td> @Html.ActionLink("Regresar","Index","Suscripcion",new{@class="btn btn-warning"} ) </td>
+<form asp-action="Guarda" asp-controller="Suscripcion" >
+      <div class="mb-5">
+            <label>Costo</label>
+            <label> $
+            <input type="number" min="1.00" max="10000.00" step="0.01"  asp-for="Costo" /></label>
+      </div>
+      <div class="mb-5">
+            <label>Caracteristica</label>
+            <input type="text" asp-for="Caracteristica" />
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+<td>  @Html.ActionLink("Regresar","Index","Suscripcion",new{@class="btn btn-warning"} ) </td>
 </form>
+
+
+</div>
+</div>

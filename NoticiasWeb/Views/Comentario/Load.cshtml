@@ -1,17 +1,33 @@
 ﻿@model NoticiasWeb.Models.Comentarios
 
+<div class="card">
+<div class="card-header">
+    Actualizar Comentario
+</div>
+<div class="card-body">
 
 
-<form asp-controller="Comentario" asp-action="actu"> 
-    <input type="hidden"  asp-for="ComentarioId" readonly/></>
-     <label>Comentario </label>
-    <input type="text"  asp-for="Comentario" /></>
-      <label>fecha</label>
-    <input type="datetime-local"  asp-for="Fecha" /></>
-      <label>Imagen</label>
-    <input type="int"  asp-for="NoticiaID" /></>
-     <button>Guardar</button>
+<form asp-action="actu" asp-controller="Comentario" >
+     <div class="mb-3">
+            <input type="hidden" asp-for="ComentarioId" readonly />
+     </div>
+     <div class="mb-3">
+            <label>Comentario </label>
+            <input type="text"  asp-for="Comentario" /></>     
+     </div>
+     <div class="mb-3">
+            <label>fecha</label>
+            <input type="datetime-local"  asp-for="Fecha" /></>
+     </div>
+     <div class="mb-3">
+            <label>Imagen</label>
+            <input type="int"  asp-for="NoticiaID" /></>
+     </div>
+     <button  class="btn btn-primary">Actualizar</button>
+<td> @Html.ActionLink("Regresar","Index","Comentario",new{@class="btn btn-warning"} ) </td>
 </form>
 
+</div>
+</div>
 
 

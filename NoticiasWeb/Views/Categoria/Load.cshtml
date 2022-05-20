@@ -7,30 +7,27 @@
 }
 
 <div class="card">
-  <div class="card-header">
+<div class="card-header">
     Actualizar Categoria
-  </div>
-  <div class="card-body">
+</div>
+<div class="card-body">
 
 
-      <form asp-action="actu" asp-controller="Categoria" >
+<form asp-action="actu" asp-controller="Categoria" >
       <div class="mb-3">
-      
-    <input type="hidden" asp-for="CategoriaId" readonly />
-       
+            <input type="hidden" asp-for="CategoriaId" readonly />    
       </div>
       <div class="mb-3">
-      <label>Titulo</label>
-    <input type="text" asp-for="Titulo" />
-       
+            <label>Titulo</label>
+            <input type="text" asp-for="Titulo" />       
       </div>
       <div class="mb-3">
-          <label>Descripcion</label>
-    <input type="text" asp-for="Descripcion" />
-     </div>
+            <label>Descripcion</label>
+            <input type="text" asp-for="Descripcion" />
+      </div>
       <button  class="btn btn-primary">Actualizar</button>
-     <td> @Html.ActionLink("Regresar","Index","Categoria",new{@class="btn btn-warning"} ) </td>
-    </form>
+<td> @Html.ActionLink("Regresar","Index","Categoria",new{@class="btn btn-warning"} ) </td>
+</form>
 
 
   </div>

@@ -6,22 +6,40 @@
 @{
 }
 
-<form asp-controller="Noticia" asp-action="Guarda"> 
-     
-    <label>Titulo</label>
-    <input type="text"  asp-for="Titulo" /></>
-      <label>Descripcion</label>
-    <input type="text"  asp-for="Descripcion" /></>
-      <label>Imagen</label>
-    <input type="text"  asp-for="Imagen" /></>
-      <label>Fecha</label>
-    <input type="datetime-local"  asp-for="fecha" /></>
-    <label>CategoriaID</label>
-    <input type="text" asp-for="CategoriaID" />
-      <label>UsuarioID</label>
-    <input type="text"  asp-for="UsuarioID" /></>
-    <button>Guardar</button>
+<div class="card">
+<div class="card-header">
+    Crear Noticia
+</div>
+<div class="card-body">
 
-    <td> @Html.ActionLink("Regresar","Index","Noticia",new{@class="btn btn-warning"} ) </td>
-</form>
 
+      <form asp-action="Guarda" asp-controller="Noticia" >
+       <div class="mb-5">
+            <label>Titulo</label>
+            <input type="text"  asp-for="Titulo" /></>
+       </div>
+       <div class="mb-5">
+            <label>Descripcion</label>
+            <input type="text"  asp-for="Descripcion" /></>
+       </div>
+       <div class="mb-5">
+            <label>Imagen</label>
+            <input type="text"  asp-for="Imagen" /></>
+       </div>
+       <div class="mb-5">
+            <label>Fecha</label>
+            <input type="datetime-local"  asp-for="fecha" /></>
+       </div>
+       <div class="mb-5">
+            <label>CategoriaID</label>
+            <input type="text" asp-for="CategoriaID" />
+       </div>
+       <div class="mb-5">
+            <label>UsuarioID</label>
+            <input type="text"  asp-for="UsuarioID" /></>
+       </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+     <td> @Html.ActionLink("Regresar","Index","Noticia",new{@class="btn btn-warning"} ) </td>
+    </form>
+  </div>
+</div>

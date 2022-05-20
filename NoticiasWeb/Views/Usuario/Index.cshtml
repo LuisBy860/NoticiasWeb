@@ -2,47 +2,46 @@
 
 
 
-    @*esto es boostrap*@
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Mostrar Dashboard</button>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+
+
+<div>
+    <button class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" > <i class="bi bi-arrow-right-square-fill"> Opciones</i>  </button>
+</div>
+    &nbsp;
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
 
     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Opciones y Registros</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
   </div>
-  <div class="offcanvas-body">
- <p> <a  href="/Suscripcion/index">Suscripcion</a> </p>
-   <p> <a  href="/Privilegio/index">Privilegio</a> </p>
-   <p> <a  href="/Categoria/index">Categoria</a> </p>
-    <p> <a  href="/Usuario/index">Usuario</a> </p>
-     <p> <a  href="/Noticia/index">Noticia</a> </p>
-      <p> <a  href="/Comentario/index">Comentario</a> </p>
-        <p> <a  href="/MostrarNoticia/index">MostrarNoticia</a> </p>
-  </div>
+<div class="offcanvas-body">
+  <p> <a  href="/Suscripcion/index">Suscripcion         </a> </p>
+  <p> <a  href="/Privilegio/index">Privilegio           </a> </p>
+  <p> <a  href="/Categoria/index">Categoria             </a> </p>
+  <p> <a  href="/Usuario/index">Usuario                 </a> </p>
+  <p> <a  href="/Noticia/index">Noticia                 </a> </p>
+  <p> <a  href="/Comentario/index">Comentario           </a> </p>
+  <p> <a  href="/MostrarNoticia/index">MostrarNoticia   </a> </p>
 </div>
+</div> 
 
+<div class="card border-dark mb-3">
+<div class="card-header" >
+    Listar Usuarios
+</div>
+<div class="card-body">
 
-
-<div>  
-
-
-
-<a class="btn btn-success" href="/Usuario/Agregar">Agregar</a> 
-
- </div>
-
- &nbsp;
-
-<table class="table table-striped" id="tablaEst">
-
-   
-   
-   
-    
-    <thead>
+    <a class="btn btn-success" href="/Usuario/Agregar"><i class="bi bi-plus-circle"><b> </b></i>Agregar Usuario</a>
+     
+    <hr />
+    <table class="table table-bordered"  id="tablaEst" >
+      <thead>
         <tr>
-            <th>Id Usuario</th>
+             <th>Id Usuario</th>
              <th>Nombre</th>
              <th>Alias</th>
              <th>Contrasena</th>
@@ -53,27 +52,33 @@
         </tr>
 
     </thead>
-    <tbody>
+        <tbody>
         @foreach (var iterar in Model)
         {
             <tr>
-                <td>@iterar.UsuarioId  </td>
-             <td> @iterar.Nombre</td>
-                <td>@iterar.Alias  </td>
-                 <td>@iterar.Contrasena  </td>
-                  <td>@iterar.Email </td>
-                   <td>@iterar.PrivilegioID  </td>
-                    <td>@iterar.SuscripcionID  </td>
+               <td>@iterar.UsuarioId    </td>
+               <td> @iterar.Nombre      </td>
+               <td>@iterar.Alias        </td>
+               <td>@iterar.Contrasena   </td>
+               <td>@iterar.Email        </td>
+               <td>@iterar.PrivilegioID </td>
+               <td>@iterar.SuscripcionID</td>
                 @*El primer delete es para texto el segundo delte es la accion del controlador*@
-                <td>@Html.ActionLink("Delete","Delete",new{id=@iterar.UsuarioId},new{@class="btn btn-danger"}) 
-                @Html.ActionLink("Update","Load",new{id=@iterar.UsuarioId},new{@class="btn btn-warning"} ) </td>
+                <td>
+                @Html.ActionLink("Delete","Delete",new{id=@iterar.UsuarioId},new{@class="bi bi-x-circle + btn btn-danger"}) 
+                @Html.ActionLink("Update","Load",new{id=@iterar.UsuarioId},new{@class="bi bi-arrow-clockwise + btn btn-warning"} )
+                </td>
             </tr>
         }
 
-       </tbody>
+    </tbody>
+    </table>
 
-      &nbsp;
-</table>
+</div>
+</div>
+
+<div>
+
 @section scripts{
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -85,7 +90,7 @@
         );
 
     </script>
-
 }
+</div>
 
 

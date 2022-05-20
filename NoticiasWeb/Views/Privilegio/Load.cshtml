@@ -4,11 +4,27 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-}
-<form asp-controller="Privilegio" asp-action="actu"> 
-    <label>Id</label>
-    <input type="text" asp-for="PrivilegioId" readonly />
-    <label>Titulo</label>
-    <input type="text" asp-for="TipoUsuario" />
-    <button>Update</button>
+
+}<div class="card">
+<div class="card-header">
+    Actualizar Privilegio
+</div>
+<div class="card-body">
+
+
+<form asp-action="actu" asp-controller="Privilegio" >
+      <div class="mb-3">
+            <input type="hidden" asp-for="PrivilegioId" readonly />
+      </div>
+      <div class="mb-3">
+            <label>Titulo</label>
+            <input type="text" asp-for="TipoUsuario" />
+      </div>
+      
+      <button  class="btn btn-primary">Actualizar</button>
+<td> @Html.ActionLink("Regresar","Index","Privilegio",new{@class="btn btn-warning"} ) </td>
 </form>
+
+
+</div>
+</div>
