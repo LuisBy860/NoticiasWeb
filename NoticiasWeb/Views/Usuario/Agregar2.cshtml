@@ -1,0 +1,44 @@
+﻿@model NoticiasWeb.Models.Usuarios
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="card">
+<div class="card-header">
+    Crear Usuario
+</div>
+<div class="card-body">
+
+
+<form asp-action="Guarda" asp-controller="Usuario" >
+      <div class="mb-5">
+            <label>Nombre</label>
+            <input type="text"  asp-for="Nombre" /></>
+      </div>
+      <div class="mb-5">
+            <label>Alias</label>
+            <input type="text"  asp-for="Alias" /></>
+      </div>
+      <div class="mb-5">
+            <label>Contraseña</label>
+            <input type="text"  asp-for="Contrasena" /></>
+      </div>
+      <div class="mb-5">
+            <label>Email</label>
+            <input type="text"  asp-for="Email" /></>
+      </div>
+      <div class="mb-5">
+            <label>PrivilegioID</label>
+            <input type="text" asp-for="PrivilegioID" />
+      </div>
+      <div class="mb-5">
+            <label>SuscripcionID</label>
+            <input type="text"  asp-for="SuscripcionID" /></>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+<td> @Html.ActionLink("Regresar","Index","Usuario",new{@class="btn btn-warning"} ) </td>
+</form>
+</div>
+</div>
