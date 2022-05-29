@@ -195,7 +195,7 @@ namespace NoticiasWeb.Migrations
             modelBuilder.Entity("NoticiasWeb.Models.Noticias", b =>
                 {
                     b.HasOne("NoticiasWeb.Models.Categorias", "Categoria")
-                        .WithMany()
+                        .WithMany("Noticia")
                         .HasForeignKey("CategoriaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -228,6 +228,11 @@ namespace NoticiasWeb.Migrations
                     b.Navigation("Privilegio");
 
                     b.Navigation("Suscripcion");
+                });
+
+            modelBuilder.Entity("NoticiasWeb.Models.Categorias", b =>
+                {
+                    b.Navigation("Noticia");
                 });
 
             modelBuilder.Entity("NoticiasWeb.Models.Noticias", b =>

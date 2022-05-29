@@ -5,7 +5,6 @@ using NoticiasWeb.Service;
 
 namespace NoticiasWeb.Controllers
 {
-    
     public class CategoriaController : Controller
     {
         private ICategoria  Categoria;
