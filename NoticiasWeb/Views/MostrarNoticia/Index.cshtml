@@ -1,18 +1,11 @@
 ﻿@model IEnumerable<NoticiasWeb.Models.Noticias>
 
-@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
 
 
 
-        <thead>
+
+       @* <thead>
             <tr>
                 <th>TITULO</th>
                 <th>DESCRIPCION</th>
@@ -23,20 +16,30 @@
            
             </tr>
 
-        </thead>
+        </thead>*@
 
-        <tbody>
-
-
+        
         @foreach(var iteracion in Model)
         {
-            <tr>
-                <td>@iteracion.Titulo</td>
+           
+            
+            <div class="card" style="width: 25rem;">
+                <label>Publicado por <td>@iteracion.Usuario.Alias</td></label>
+ <td class="text-center"><img src="@iteracion.Imagen" class="imgCars" alt="..."></td>
+  <div class="card-body">
+    <h5 class="card-title"> <td>@iteracion.Titulo</td> </h5>
+    <p class="card-text"><td>@iteracion.Descripcion</td> </p>
+       <label> el dia <td>@iteracion.fecha</td></label>
+  </div>
+</div>
+ 
+         
+             @*   <td>@iteracion.Titulo</td>
                 <td>@iteracion.Descripcion</td>
                 <td>@iteracion.Imagen</td>
-                <td>@iteracion.Usuario.Alias</td>
-                <td>@iteracion.fecha</td>
-            </tr>
+                <td>@iteracion.Usuario</td>
+                <td>@iteracion.fecha</td>*@
+            
         }
-        </tbody>
+       
     

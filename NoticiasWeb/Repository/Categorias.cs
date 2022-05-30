@@ -30,18 +30,18 @@ namespace NoticiasWeb.Repository
             app.SaveChanges();
         }
 
-        public List<Models.Categorias> Getall()
+        public List<Categorias> Getall()
         {
             return app.Categorias.ToList();
         }
 
-        public Models.Categorias LoadInformation(Categorias ca)
+        public Categorias LoadInformation(Categorias ca)
         {
             var listarcategoria = app.Categorias.Where(x => x.CategoriaId == ca.CategoriaId).FirstOrDefault();
             return listarcategoria;
         }
 
-        public void UpdateCategorias(Models.Categorias ca)
+        public void UpdateCategorias(Categorias ca)
         {
             app.Categorias.Update(ca);
             app.SaveChanges();

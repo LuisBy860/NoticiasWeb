@@ -61,6 +61,7 @@ namespace NoticiasWeb.Controllers
            
             return View(listar);
         }
+
         [HttpPost]
         public IActionResult Insertardata(Categorias ca)
         {

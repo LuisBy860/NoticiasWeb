@@ -7,9 +7,7 @@ namespace NoticiasWeb.Controllers
 {
     public class NoticiaController : Controller
     {
-
-
-
+      
         private INoticia Noticia;
 
         public NoticiaController(INoticia noticia)
@@ -29,6 +27,8 @@ namespace NoticiasWeb.Controllers
         {
             Noticia.AddNoticias(nt);
 
+
+
             return Redirect("Index");
         }
         public IActionResult Agregar()
@@ -46,16 +46,21 @@ namespace NoticiasWeb.Controllers
         }
         public IActionResult Load(int id)
         {
+
+
+
             Noticias nt = new();
             nt.NoticiaId = id;
             var listarnoticia = Noticia.LoadInformation(nt);
 
             return View(listarnoticia);
+
         }
         public IActionResult Index()
         {
 
             var listar = Noticia.Getall();
+
 
             return View(listar);
         }
@@ -67,6 +72,13 @@ namespace NoticiasWeb.Controllers
             // return View("Index");
 
         }
+
+
+
+
+
+
+
 
     }
 }

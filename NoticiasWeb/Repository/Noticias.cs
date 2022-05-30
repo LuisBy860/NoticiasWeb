@@ -7,6 +7,7 @@ namespace NoticiasWeb.Repository
 {
     public class Noticia : INoticia
     {
+
         private ApplicationDBContext app;
 
         public Noticia(ApplicationDBContext app)
@@ -36,6 +37,7 @@ namespace NoticiasWeb.Repository
 
         public Models.Noticias LoadInformation(Noticias nt)
         {
+
             var listarnoticias = app.Noticias.Where(x => x.NoticiaId == nt.NoticiaId).FirstOrDefault();
             return listarnoticias;
 
@@ -47,8 +49,10 @@ namespace NoticiasWeb.Repository
             app.SaveChanges();
 
         }
-       
+      
 
-       
+
+
+
     }
 }
