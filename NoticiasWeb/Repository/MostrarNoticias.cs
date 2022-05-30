@@ -22,7 +22,7 @@ namespace NoticiasWeb.Repository
 
             var join = _Bd.Noticias
                 .Include(e => e.Categoria)
-                .Include(e => e.Usuario).ToList();
+            .Include(e => e.Usuario).ToList();
 
 
             return join;

@@ -32,6 +32,8 @@ namespace NoticiasWeb.Controllers
     
             return View(getInnerJoin);
         }
+
+
        
     }
 }

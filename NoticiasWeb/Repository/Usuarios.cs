@@ -27,7 +27,7 @@ namespace NoticiasWeb.Repository
             
         }
 
-        public List<Models.Usuarios> Getall()
+        public List<Usuarios> Getall()
         {
             return app.Usuarios.ToList();
            

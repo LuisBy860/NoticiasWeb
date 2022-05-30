@@ -55,14 +55,15 @@
         <tbody>
         @foreach (var iterar in Model)
         {
-            <tr>
+          <tr>
                 <td>@iterar.NoticiaId   </td>
                 <td> @iterar.Titulo     </td>
                 <td>@iterar.Descripcion </td>
-                <td>@iterar.Imagen      </td>
+                 <td><img src="@iterar.Imagen" class="imgCars" alt="..."></td>
                 <td>@iterar.fecha       </td>
                 <td>@iterar.CategoriaID </td>
                 <td>@iterar.UsuarioID   </td>
+
                 @*El primer delete es para texto el segundo delte es la accion del controlador*@
                 <td>
                 @Html.ActionLink("Delete","Delete",new{id=@iterar.NoticiaId},new{@class="bi bi-x-circle + btn btn-danger"}) 
