@@ -34,7 +34,8 @@
 
        <div class="mb-5">
             <label>CategoriaID</label>
-            <input type="text" asp-for="CategoriaID" />
+            <!-- Dropdon con datos cargados desde viewbag -->
+           @Html.DropDownList("CategoriaId", new SelectList(ViewBag.Categorias,"CategoriaId","Titulo"))
        </div>
        <div class="mb-5">
             <label>UsuarioID</label>

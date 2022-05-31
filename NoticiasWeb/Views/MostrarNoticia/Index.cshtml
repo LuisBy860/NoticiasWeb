@@ -1,45 +1,50 @@
 ﻿@model IEnumerable<NoticiasWeb.Models.Noticias>
+@{    
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";//agregando un layout personalizado
+}
 
 
 
 
 
-
-       @* <thead>
+@* <thead>
             <tr>
                 <th>TITULO</th>
                 <th>DESCRIPCION</th>
-                <th>IMAGEN </th> 
-             
+                <th>IMAGEN </th>
+
                 <th>USUARIO </th>
                 <th>FECHA</th>
-           
+
             </tr>
 
         </thead>*@
 
-        
-        @foreach(var iteracion in Model)
-        {
-           
-            
-            <div class="card" style="width: 25rem;">
-                <label>Publicado por <td>@iteracion.Usuario.Alias</td></label>
- <td class="text-center"><img src="@iteracion.Imagen" class="imgCars" alt="..."></td>
-  <div class="card-body">
-    <h5 class="card-title"> <td>@iteracion.Titulo</td> </h5>
-    <p class="card-text"><td>@iteracion.Descripcion</td> </p>
-       <label> el dia <td>@iteracion.fecha</td></label>
-  </div>
+
+<div class="text-center item-center">
+    @foreach (var iteracion in Model)
+    {
+
+
+        <div class="card" style="width: 25rem;">
+            <label>Publicado por <td>@iteracion.Usuario.Alias</td></label>
+            <td class="text-center"><img src="@iteracion.Imagen" class="imgCars" alt="..."></td>
+            <div class="card-body">
+                <h5 class="card-title"> <td>@iteracion.Titulo</td> </h5>
+                <p class="card-text"><td>@iteracion.Descripcion</td> </p>
+                <label> el dia <td>@iteracion.fecha</td></label>
+            </div>
+        </div>
+
+
+        @*   <td>@iteracion.Titulo</td>
+    <td>@iteracion.Descripcion</td>
+    <td>@iteracion.Imagen</td>
+    <td>@iteracion.Usuario</td>
+    <td>@iteracion.fecha</td>*@
+
+    }
+
 </div>
- 
-         
-             @*   <td>@iteracion.Titulo</td>
-                <td>@iteracion.Descripcion</td>
-                <td>@iteracion.Imagen</td>
-                <td>@iteracion.Usuario</td>
-                <td>@iteracion.fecha</td>*@
-            
-        }
-       
-    
+
+

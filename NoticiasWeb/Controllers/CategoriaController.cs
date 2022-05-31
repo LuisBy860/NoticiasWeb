@@ -47,8 +47,7 @@ namespace NoticiasWeb.Controllers
         {
             Categorias ca = new Categorias();
             ca.CategoriaId = id;
-            var listarcategoria = Categoria.LoadInformation(ca);
-
+            var listarcategoria = Categoria.LoadInformation(ca);     
             return View(listarcategoria);
         }
 

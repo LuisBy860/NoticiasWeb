@@ -9,10 +9,12 @@ namespace NoticiasWeb.Controllers
     {
       
         private INoticia Noticia;
+        private ICategoria Categoria;//inicializar el servicio de categorias
 
-        public NoticiaController(INoticia noticia)
+        public NoticiaController(INoticia noticia, ICategoria categoria)
         {
             Noticia = noticia;
+            Categoria = categoria;
         }
 
 
@@ -33,7 +35,7 @@ namespace NoticiasWeb.Controllers
         }
         public IActionResult Agregar()
         {
-
+            ViewBag.Categorias = Categoria.Getall();//enviando la lista de categorias el el viewbag
             return View();
         }
         public IActionResult Delete(int id)

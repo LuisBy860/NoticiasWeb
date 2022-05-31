@@ -4,20 +4,18 @@ using NoticiasWeb.Service;
 
 namespace NoticiasWeb.Controllers
 {
+
     public class UsuarioController : Controller
     {
 
         private IUsuario Usuario;
-
         public UsuarioController(IUsuario usuario)
         {
             Usuario = usuario;
         }
 
-
         public IActionResult actu(Usuarios us)
         {
-
             Usuario.UpdateUsuarios(us);
             return RedirectToAction("Index");
 
@@ -48,8 +46,9 @@ namespace NoticiasWeb.Controllers
         {
             Usuarios us = new();
             us.UsuarioId = id;
+            
             var listarusuario = Usuario.LoadInformation(us);
-
+            
             return View(listarusuario);
         }
         public IActionResult Index()
