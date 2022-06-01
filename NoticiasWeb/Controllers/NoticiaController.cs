@@ -25,8 +25,12 @@ namespace NoticiasWeb.Controllers
             return RedirectToAction("Index");
 
         }
-        public IActionResult Guarda(Noticias nt)
+        public IActionResult Guarda(List<IFormFile> Img, Noticias nt)
         {
+            string Rutaimg = "wwwroot/Img/Noticia";
+            string path = "Img/Noticia";
+            string Nombreimg = GuardarIMG(Img, Rutaimg);
+            nt.Imagen = path + "/" + Nombreimg;
             Noticia.AddNoticias(nt);
 
 
@@ -70,17 +74,36 @@ namespace NoticiasWeb.Controllers
         public IActionResult Insertardata(Noticias nt)
         {
 
+
             return RedirectToAction("Index");
             // return View("Index");
-
         }
 
+        public string GuardarIMG(List<IFormFile> Imagen, string path)
+        {
 
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
+            List<string> uploadedFiles = new List<string>();
+            string FileName = "";
+            foreach (IFormFile postedFile in Imagen)
+            {
+                string fileName = Path.GetFileName(postedFile.FileName);
+                using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+                {
+                    postedFile.CopyTo(stream);
+                    uploadedFiles.Add(fileName);
 
-
-
-
-
+                }
+                FileName = fileName;
+            }
+            return FileName;
+        }
     }
+
+
+
 }
