@@ -13,7 +13,7 @@
 <div class="card-body">
 
 
-      <form asp-action="Guarda" asp-controller="Noticia" >
+         <form enctype="multipart/form-data"  asp-action="Guarda" asp-controller="Noticia" >
        <div class="mb-5">
             <label>Titulo</label>
             <input type="text"  asp-for="Titulo" /></>
@@ -34,8 +34,9 @@
 
        <div class="mb-5">
             <label>CategoriaID</label>
+            
             <!-- Dropdon con datos cargados desde viewbag -->
-           @Html.DropDownList("CategoriaId", new SelectList(ViewBag.Categorias,"CategoriaId","Titulo"))
+          @Html.DropDownList("CategoriaId", new SelectList(ViewBag.Categorias,"CategoriaId","Titulo"))
        </div>
        <div class="mb-5">
             <label>UsuarioID</label>

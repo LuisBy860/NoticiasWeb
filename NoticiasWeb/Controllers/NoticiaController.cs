@@ -7,7 +7,7 @@ namespace NoticiasWeb.Controllers
 {
     public class NoticiaController : Controller
     {
-      
+
         private INoticia Noticia;
         private ICategoria Categoria;//inicializar el servicio de categorias
 
@@ -28,7 +28,7 @@ namespace NoticiasWeb.Controllers
         public IActionResult Guarda(List<IFormFile> Img, Noticias nt)
         {
             string Rutaimg = "wwwroot/Img/Noticia";
-            string path = "Img/Noticia";
+           string path = "Img/Noticia";
             string Nombreimg = GuardarIMG(Img, Rutaimg);
             nt.Imagen = path + "/" + Nombreimg;
             Noticia.AddNoticias(nt);
@@ -39,7 +39,7 @@ namespace NoticiasWeb.Controllers
         }
         public IActionResult Agregar()
         {
-            ViewBag.Categorias = Categoria.Getall();//enviando la lista de categorias el el viewbag
+           ViewBag.Categorias = Categoria.Getall();//enviando la lista de categorias el el viewbag
             return View();
         }
         public IActionResult Delete(int id)
