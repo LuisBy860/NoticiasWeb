@@ -19,32 +19,33 @@
             </tr>
 
         </thead>*@
-
-
-<div class="text-center item-center">
+           
+  <div class="row text-center">
+@*<div class="text-center item-center">*@
     @foreach (var iteracion in Model)
-    {
-
-
-        <div class="card" style="width: 25rem;">
+    {                                   @*Este ↓ Margin es para dar espacio arriba y abajo*@
+        <div class="card" style="width: 450px; margin-bottom: 30px;">
             <label>Publicado por <td>@iteracion.Usuario.Alias</td></label>
-            <td><img src="~/@iteracion.Imagen" class="imgCars" alt="..." style="max-width: 50px;"></td>
-            <div class="card-body">
-                <h5 class="card-title"> <td>@iteracion.Titulo</td> </h5>
-                <p class="card-text"><td>@iteracion.Descripcion</td> </p>
-                <label> el dia <td>@iteracion.fecha</td></label>
-            </div>
+              <div class="text-center">
+                <td class="card-center"><img src="~/@iteracion.Imagen" class="imgCars" alt="..." style="width: 350px; height: 200px;"></td>
+              </div>
+                    <div class="card-body">
+                        <h5 class="card-title"> <td>@iteracion.Titulo</td> </h5>
+                            <p class="card-text"><td>@iteracion.Descripcion</td> </p>
+            <label> el dia <td>@iteracion.fecha</td></label>
+                    </div>
         </div>
-
-
+    
+        @*ESTO SIRVE PARA DAR ESPACIO ENTRE CARDS*@
+        <div style="width: 30px;"></div>
+        
+        
         @*   <td>@iteracion.Titulo</td>
     <td>@iteracion.Descripcion</td>
     <td>@iteracion.Imagen</td>
     <td>@iteracion.Usuario</td>
     <td>@iteracion.fecha</td>*@
-
     }
-
-</div>
-
-
+ 
+    </div>       
+@*</div>*@
