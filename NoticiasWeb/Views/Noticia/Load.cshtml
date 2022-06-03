@@ -7,27 +7,32 @@
 <div class="card-body">
 
 
-<form asp-action="actu" asp-controller="Noticia" >
+<form enctype="multipart/form-data" asp-action="actu" asp-controller="Noticia" >
        <div class="mb-3">      
             <input type="hidden" asp-for="NoticiaId" readonly />
        </div>
+
        <div class="mb-5">
             <label>Titulo</label>
             <input type="text"  asp-for="Titulo" /></>
        </div>
+
        <div class="mb-5">
             <label>Descripcion</label>
             <input type="text"  asp-for="Descripcion" /></>
        </div>
+
        <div class="mb-5">
             <label>Imagen</label>
-            <input type="file" name="Img" multiple /></>
+            <input type="file" name="Img" multiple asp-for="Imagen"/></>
            
        </div>
+
        <div class="mb-5">
             <label>fecha</label>
             <input type="datetime"  asp-for="fecha" /></>
        </div>
+
        <div class="mb-5">
             <label>CategoriaID</label>
              @Html.DropDownListFor(model=>model.CategoriaID, new SelectList(ViewBag.Categorias,"CategoriaId","Titulo"))<!--dropdown para actualizar categoria-->
@@ -36,7 +41,9 @@
        </div>
        <div class="mb-5">
             <label>UsuarioID</label>
-            <input type="text"  asp-for="UsuarioID" /></>
+            @*<input type="text"  asp-for="UsuarioID" /></>*@
+             @Html.DropDownListFor(model=>model.UsuarioID, new SelectList(ViewBag.Usuarios,"UsuarioId","Alias"))<!--dropdown para actualizar categoria-->
+
        </div>
       <button  class="btn btn-primary">Actualizar</button>
      <td> @Html.ActionLink("Regresar","Index","Noticia",new{@class="btn btn-warning"} ) </td>

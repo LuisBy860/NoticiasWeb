@@ -10,18 +10,25 @@ namespace NoticiasWeb.Controllers
 
         private INoticia Noticia;
         private ICategoria Categoria;//inicializar el servicio de categorias
+        private IUsuario Usuario;
 
-        public NoticiaController(INoticia noticia, ICategoria categoria)
+        public NoticiaController(INoticia noticia, ICategoria categoria, IUsuario usuario)
         {
             Noticia = noticia;
             Categoria = categoria;
+            Usuario = usuario;
         }
 
 
-        public IActionResult actu(Noticias nt)
+        public IActionResult actu(List<IFormFile> Img, Noticias nt)
         {
-
+            string Rutaimg = "wwwroot/Img/Noticia";
+            string path = "Img/Noticia";
+            string Nombreimg = GuardarIMG(Img, Rutaimg);
+            nt.Imagen = path + "/" + Nombreimg;
             Noticia.UpdateNoticias(nt);
+
+
             return RedirectToAction("Index");
 
         }
@@ -40,8 +47,11 @@ namespace NoticiasWeb.Controllers
         public IActionResult Agregar()
         {
            ViewBag.Categorias = Categoria.Getall();//enviando la lista de categorias el el viewbag
+           ViewBag.Usuarios = Usuario.Getall();
             return View();
         }
+
+       
         public IActionResult Delete(int id)
         {
             Noticias nt = new Noticias();
@@ -55,6 +65,7 @@ namespace NoticiasWeb.Controllers
 
 
             ViewBag.Categorias = Categoria.Getall();//enviando la lista de categorias el el viewbag
+            ViewBag.Usuarios = Usuario.Getall();
             Noticias nt = new();
             nt.NoticiaId = id;
             var listarnoticia = Noticia.LoadInformation(nt);

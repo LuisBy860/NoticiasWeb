@@ -46,7 +46,7 @@ namespace NoticiasWeb.Repository
         public void UpdateNoticias(Noticias nt)
         {
             app.Noticias.Update(nt);
-        
+            app.SaveChanges();
 
         }
       
