@@ -19,11 +19,18 @@
             </tr>
 
         </thead>*@
-           
+          
+
+
+
   <div class="row text-center">
 @*<div class="text-center item-center">*@
     @foreach (var iteracion in Model)
-    {                                   @*Este ↓ Margin es para dar espacio arriba y abajo*@
+    {                             
+      
+        
+        
+                                        @*Este ↓ Margin es para dar espacio arriba y abajo*@
         <div class="card" style="width: 450px; margin-bottom: 30px;">
            <a href="@Url.Action("noticia","MostrarNoticia" , new{id=@iteracion.NoticiaId})">
                 <label>Publicado por <td>@iteracion.Usuario.Alias</td></label>
