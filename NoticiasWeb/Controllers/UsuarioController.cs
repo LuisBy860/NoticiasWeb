@@ -66,5 +66,6 @@ namespace NoticiasWeb.Controllers
             // return View("Index");
 
         }
+         
     }
 }

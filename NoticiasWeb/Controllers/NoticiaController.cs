@@ -54,7 +54,7 @@ namespace NoticiasWeb.Controllers
         {
 
 
-
+            ViewBag.Categorias = Categoria.Getall();//enviando la lista de categorias el el viewbag
             Noticias nt = new();
             nt.NoticiaId = id;
             var listarnoticia = Noticia.LoadInformation(nt);

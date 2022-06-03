@@ -30,7 +30,9 @@
        </div>
        <div class="mb-5">
             <label>CategoriaID</label>
-            <input type="text" asp-for="CategoriaID" />
+             @Html.DropDownListFor(model=>model.CategoriaID, new SelectList(ViewBag.Categorias,"CategoriaId","Titulo"))<!--dropdown para actualizar categoria-->
+
+            
        </div>
        <div class="mb-5">
             <label>UsuarioID</label>
