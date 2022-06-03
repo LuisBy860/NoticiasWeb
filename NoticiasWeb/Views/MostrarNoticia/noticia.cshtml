@@ -3,12 +3,22 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";//agregando un layout personalizado
     var noticia = ViewBag.noticia;
 }
+  
+  <div class="principal" style="margin:0 auto; width: 600px;">
+    <div style="margin-bottom:30px;">
+        <h3 >@noticia.Titulo</h3>
+    </div>
 
-<div>
+    <div style="margin-bottom:30px;">
+        <div class="text-center">
+            <img src="~/@noticia.Imagen" style="max-width:600px"/>
+        </div>
+    </div>
 
-    <h3 >@noticia.Titulo</h3>
-    <img src="~/@noticia.Imagen" style="max-width:350px"/>
-    <p>@noticia.Descripcion</p>
+    <div style="font-size:22px; width: 600px;  margin-bottom:30px;">
+        <p>@noticia.Descripcion</p>
+    </div>
 
-    <h5>creado por @noticia.Usuario.Alias</h5>
-</div>
+   @* <h5>creado por @noticia.Usuario.Alias</h5>*@
+    </div>
+
